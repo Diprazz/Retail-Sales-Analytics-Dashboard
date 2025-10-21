@@ -1,0 +1,180 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "12345678",
+   "metadata": {},
+   "source": [
+    "# 🏪 Retail Sales Analytics & Forecasting\n",
+    "\n",
+    "## Complete Business Intelligence Solution\n",
+    "\n",
+    "Author: **Diprazz**\n",
+    "\n",
+    "This notebook provides comprehensive analysis of retail sales data including forecasting, customer segmentation, and business insights."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "87654321",
+   "metadata": {},
+   "source": [
+    "## 1. Data Loading & Initial Exploration"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "11111111",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns\n",
+    "import warnings\n",
+    "warnings.filterwarnings('ignore')\n",
+    "\n",
+    "plt.style.use('seaborn')\n",
+    "print(\"🛍️ Retail Sales Analytics Project - Loading Data...\")\n",
+    "\n",
+    "# Load Dataset\n",
+    "df = pd.read_csv('../data/superstore_sales.csv')\n",
+    "df['Order_Date'] = pd.to_datetime(df['Order_Date'])\n",
+    "df['Ship_Date'] = pd.to_datetime(df['Ship_Date'])\n",
+    "\n",
+    "print(f\"📊 Dataset Loaded: {df.shape[0]} rows, {df.shape[1]} columns\")\n",
+    "print(f\"📅 Date Range: {df['Order_Date'].min()} to {df['Order_Date'].max()}\")\n",
+    "print(f\"💰 Total Sales: ${df['Sales'].sum():,.2f}\")\n",
+    "print(f\"🎯 Total Profit: ${df['Profit'].sum():,.2f}\")\n",
+    "\n",
+    "# Display first few rows\n",
+    "df.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "22222222",
+   "metadata": {},
+   "source": [
+    "## 2. Exploratory Data Analysis (EDA)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "33333333",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Basic Statistics\n",
+    "print(\"📋 Basic Statistics:\")\n",
+    "print(df[['Sales', 'Profit', 'Quantity', 'Discount']].describe())\n",
+    "\n",
+    "# Missing Values\n",
+    "print(\"\\n❓ Missing Values:\")\n",
+    "print(df.isnull().sum())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "44444444",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Sales by Category\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "category_sales = df.groupby('Category')['Sales'].sum()\n",
+    "plt.bar(category_sales.index, category_sales.values)\n",
+    "plt.title('Total Sales by Category')\n",
+    "plt.xticks(rotation=45)\n",
+    "plt.ylabel('Sales ($)')\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "55555555",
+   "metadata": {},
+   "source": [
+    "## 3. Sales Trends Over Time"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "66666666",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Monthly Sales Trend\n",
+    "monthly_sales = df.groupby(df['Order_Date'].dt.to_period('M'))['Sales'].sum()\n",
+    "\n",
+    "plt.figure(figsize=(12, 6))\n",
+    "monthly_sales.plot(kind='line', marker='o')\n",
+    "plt.title('Monthly Sales Trend')\n",
+    "plt.xlabel('Month')\n",
+    "plt.ylabel('Sales ($)')\n",
+    "plt.grid(True)\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "77777777",
+   "metadata": {},
+   "source": [
+    "## 4. Regional Performance"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "88888888",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Sales by Region\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "region_sales = df.groupby('Region')['Sales'].sum()\n",
+    "plt.bar(region_sales.index, region_sales.values)\n",
+    "plt.title('Sales by Region')\n",
+    "plt.ylabel('Sales ($)')\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "99999999",
+   "metadata": {},
+   "source": [
+    "## 5. Next Steps\n",
+    "\n",
+    "- Add machine learning models for forecasting\n",
+    - Implement customer segmentation\n",
+    "- Create advanced visualizations\n",
+    "- Build predictive analytics\n",
+    "\n",
+    "**Run the Streamlit app for interactive dashboard:** `streamlit run app.py`"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python",
+   "version": "3.x"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,11 @@
+Order_ID,Order_Date,Ship_Date,Customer_ID,Customer_Name,Segment,City,State,Region,Product_ID,Category,Sub_Category,Product_Name,Sales,Quantity,Discount,Profit
+US-2019-1001,2019-01-01,2019-01-05,CG-1001,Claire Gute,Consumer,Henderson,Kentucky,South,FUR-BO-10001,Furniture,Bookcases,Bush Somerset Collection Bookcase,261.96,2,0,41.91
+US-2019-1002,2019-01-02,2019-01-06,DV-1001,Darrin Van Huff,Corporate,Los Angeles,California,West,FUR-CH-10001,Furniture,Chairs,Hon Deluxe Fabric Upholstered Stacking Chairs,731.94,3,0,219.58
+US-2019-1003,2019-01-03,2019-01-07,SO-1001,Sean O'Donnell,Consumer,Fort Lauderdale,Florida,South,OFF-AP-10001,Office Supplies,Appliances,Canon Imageclass 2200 Advanced Copier,14.62,2,0,4.39
+US-2019-1004,2019-01-04,2019-01-08,BW-1001,Brosina Hoffman,Consumer,Los Angeles,California,West,FUR-TA-10001,Furniture,Tables,Chromcraft Rectangular Conference Tables,957.58,5,0.45,-383.03
+US-2019-1005,2019-01-05,2019-01-09,RM-1001,Ricardo Miller,Consumer,New York City,New York,East,OFF-ST-10001,Office Supplies,Storage,Eldon Fold 'N Roll Cart System,22.37,2,0,2.52
+US-2019-1006,2019-01-06,2019-01-10,MP-1001,Mitch Packer,Consumer,Philadelphia,Pennsylvania,East,OFF-BI-10001,Office Supplies,Binders,Cardinal Slant-D Ring Binder,48.86,7,0,24.43
+US-2019-1007,2019-01-07,2019-01-11,AS-1001,Andrew Allen,Consumer,Jacksonville,Florida,South,TEC-PH-10001,Technology,Phones,Mitco 5320 EU,25.55,1,0,5.11
+US-2019-1008,2019-01-08,2019-01-12,YS-1001,Yuki Sneddon,Corporate,San Francisco,California,West,OFF-EN-10001,Office Supplies,Envelopes,Poly String Tie Envelopes,8.67,3,0,4.10
+US-2019-1009,2019-01-09,2019-01-13,GM-1001,Gary Mitchum,Consumer,Seattle,Washington,West,FUR-FU-10001,Furniture,Furnishings,Eldon Expressions Desk Accessory,59.78,2,0,23.91
+US-2019-1010,2019-01-10,2019-01-14,DB-1001,Don Baxter,Corporate,Oklahoma City,Oklahoma,Central,OFF-AR-10001,Office Supplies,Art,Newell 322,19.46,2,0,5.06
